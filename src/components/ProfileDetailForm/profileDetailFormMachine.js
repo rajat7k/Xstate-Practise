@@ -43,7 +43,6 @@ export const profileDetailMachine=
                     },
                     onError:{
                         target:".failureScreen",
-                        internal: false
                     }
 
                 },
