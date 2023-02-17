@@ -7,32 +7,38 @@ export default function ProfileDetailForm() {
 
     const persistedLoginMachine = profileDetailMachine.withContext({
         isUserLogin: (() => {
-            // return localStorage.getItem('isLogin') === 'true' ? true : false;
-            return true;
+            return localStorage.getItem('isLogin') === 'true' ? true : false;
+
         })()
     })
 
     const [state, send] = useMachine(persistedLoginMachine);
-    console.log(state.value)
 
 
 
-    const { isUserLogin } = state.context;
+    function LoadScreen() {
+        const currentState = state.value;
+        console.log(currentState)
+        switch (currentState) {
+            case 'form': {
+                break;
+            }
+            default: {
+                send('form')
+                console.log("Not match with any state")
+                console.log(state.value)
+            }
+        }
+    }
 
 
     useEffect(() => {
-        console.log('came in useEffect')
-        isUserLogin && updateUserDetails()
-    }, [])
 
-    function updateUserDetails() {
-        send('CheckDetails');
-        console.log(state.value)
-    }
+    }, [])
 
     return (
         <div>
-            {isUserLogin && 'isUserLogin'}
+            {LoadScreen()}
         </div>
     )
 }

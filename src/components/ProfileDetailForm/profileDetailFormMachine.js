@@ -1,4 +1,4 @@
-import { assign, createMachine } from "xstate";
+import {  createMachine } from "xstate";
 
 const fetchFormDetail= (userId)=>{
     // return fetch('dummyURL').then((response)=>response.json);
@@ -22,9 +22,15 @@ export const profileDetailMachine=
         states:{
             idle:{
                
-                 on:{
-                    CheckDetails: [{ target:'userPresent',cond:'isUserPresent' }]
-                 }
+                always:[
+                    {
+                        target:'userPresent',
+                        cond:(context)=>context.isUserLogin===true
+                    },
+                    {
+                        target:'userNotPresent',
+                    }
+                ]
                 
             },
 
@@ -90,9 +96,5 @@ export const profileDetailMachine=
 
         initial: "idle"
     },
-    {
-        guards:{
-            isUserPresent:(context)=>context.isUserLogin===true
-        }
-    }
+    
 )
