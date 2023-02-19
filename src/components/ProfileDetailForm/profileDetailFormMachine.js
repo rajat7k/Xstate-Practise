@@ -3,12 +3,12 @@ import {  createMachine } from "xstate";
 const fetchFormDetail= (userId)=>{
     // return fetch('dummyURL').then((response)=>response.json);
     return new Promise((resolve,reject)=>{
-        resolve('val');
+        resolve();
     })
 }
 
 export const profileDetailMachine= 
-/** @xstate-layout N4IgpgJg5mDOIC5QAUBOB7AZgSwDZgBEwAXAQzwDF1UBbAOmwnwGIBhACzAGMBrIsvLADaABgC6iUAAd0sbMWzoAdpJAAPRAEYAbHQBMAdhEGAnAFYzIgMya9ZqwA4zAGhABPRDZN0ALNqvaIj6aFjomegC+Ea5oWHiEJOS4VLR0AK6wYKhocGBKxMwQymAMSgBu6DwlMMQpNPxJwuKqMnIKyqoaCGYGDnRmDg56Jj4+dnpWPgauHggmpnTaDkYiepom80EmUTEYOPgNlNT0GVk5mfnMWRiodFK4pMSYx3Q1dYe4TRJIIK3yiiofl0DD4rPoDGYTDofOYzFM9DNENoFqM9BMzJorJYhgYdiBYvsEgJki9TtlULl8nRnrRmAB5AByAGUAKoAIQAsgBJAAqom+0lk-w6QK0ITMdF6JlWUwcISm2kRc20mn6OixPjhQQc2jMeIJ8Q+dXSmXJlOI1KSaQpTK4FLyzAASgBRHmOgCa-JaQvagNAXU0IhMuj8gT0yMmyPDSuRBjoJkcVixZjRBisCf1e0NiSOqTJ5zyFtgaS4XDgsFt9qUzAAMugoHS0sQvT8-r7OogALTmSUiBxWEGrSYDlzuLuBuiaZYw2XaKaaEHaTNxA45kl500M9DEAtU3D17BKZCkGDMADirrpPOQLcFbQBHYQmlsfSDjjWDiC2mGMbjQ2sPjGOspiWJoy6EkapKbtuu4WmUWTYDgXCPACx6ngAas6jpchQ7pXjezStj6D6iggoxxiIGLzCq-YWOmipjk+yyTpRqx2JMmqfj44HZsSxpkluO4UhccEIUhKHKGhYDnpe14AIJnnJXIMrevzESK-qIFCIaGMYI4GBCPhKiEIiLNKtiUXofgBGBeJKOgEBwKoBqrnxxzeveGnqF2djeI4cIDiIz4GFOEJKp2gZxpipjSuGcIGLqS7RPiWauUkxqMPgHnCn63kIJ2ayqv5oJGMFoWjrMKq6CqBh6MYc5BVZPFpbmJymrB2XtqR9imQMQwjGMKaTNMjEBb4CZBUYun2HqyUuUS6VQWcwmFtS7lEZ5uVdBsYKmKsUKQvY-gIoxgxgsiQWrM+oyQtxc2pQtrUmst5qWng1pgJWYB5J1JGaXMfiTpoN3St+Zi6iYv59INSaWDC-Yhc1j3rm1L0iXQxaluWX0-RtOWPrYgF0AOqa2LpywOEqph9BdgaFSDd27CuyP8dBQnmr9XnArY-QJmFjERd4uqDOGwPrMEwRI5BG5ZIJsF0PuUCHlJnNbYgCW9XzFVaaqELLEGemGFMUtrqzsswStVLwagiHYMhvoq3jXX-Qjk6go4tjaCMQVWEqA5xpCdVoiIKoWIdURREAA */
+/** @xstate-layout N4IgpgJg5mDOIC5QAUBOB7AZgSwDZgBEwAXAQzwDF1UBbAOmwnwGIBtABgF1FQAHdWNmLZ0AOx4gAHogBsAJgA0IAJ6IALAFZ2dDQGYAnIYCMcgOwy1pkwF9rStFjyES5XFVoMmYNke5IQ-ILCYhLSCLpy+nRGBnIyABzyGmoyGvpKqghG8XJ08aYa+TKm8REWRhq29hg4+ERklNT0AK6wYKhocGCixMwQYmAMogBu6ADWgzDE7jT1rrAcfnwCQiLi-mGJpnTmEfpq7GZquuwyGbKm23qFamrZGkYlMlUgDrXODW5NdK3tnW09ZjtDCoOi8XCkYiYb5TGZzPALLgSQKrEIbRBbHYyPYHI4nM4qRAaDTbOTxQpaMkRSLxF5vJzwr4eX4dVBdHp0aG0ZgAeQAcgBlACqACEALIASQAKotkStgutQGETHIjHR2PEcglUgdzKZzghUrpokYNQYNEbLJU7K8agyXI1mW1WeziJzXM02QKAMZs7rMABKAFEpQGAJqy-wohWhRAqtUarWJZLsPUG4kaHbknLsAzsDRk-R0u11B1MlrO-7dN2wZre71wWA+v2iZgAGR5AHEeUKZUio-K1rGEAWDaVtDTdLpjloTnJrdVHKXPjMfs6+ehiFWObh0FBsKJkKQYMxOyGeVLkJHlkEh+iEPPtKaEppNMUjB+1AbTYU6JZ9KY+YyEY+jJEWNr0suririyG5bmyAJusM7TYDg3qQmsR4ngAakGAYShQYYXle-Y3qiipSES+x5AUub5voppqKq6bxGo0RyFOujyAU8T6PkxZLh80HfLBm7bkhKFoRhYhYd4Z5SsRACCnaKRKfLXgEg5okqiCPtEpysckFpWJ+37sKmdAAfoMh8WkRo2C8ojoBAcASJBQmOjQcq3tplEIAAtASmSJDRnEmOw+xyMcagCe8jKrow+DeeRw5Md+phsbophTnEhyHPE2SmLF9oriJlYIdWyUxveBVRLskS4hl+IGgcbGpDIqbZGo+TmOBi5xWWMHla6nJNFVd46VkZo7PsBYpCBpy6AaxQyDougUmkU76OwmjFVBnlrn8FUcpgHper6YDdONvnKgZdByOZ8TmSY2X7PE6YGNEFqnNiFiWAVe0eeWh0uohdC1vWjbNpdFHRhNfkxKk6q6Dk5ImFOMjFMt5hrRt+hbTtC62oJ8Vle0cHiddFFhFY923BEJIlCSxxGAa+gPX+pjWfIRi3FF+OA6TTrk2Jx1uru+6HseYBU8OH5RFFxzzpc5JNazhJTbz6rYrmoGnBlGqC4NZOoBTYt0MhqCodg6EKrJsv3ncUSatkSQPWkZJmUYq0Wic5r6wctK2NYQA */
  createMachine(
     {
         predictableActionArguments: true,
@@ -34,6 +34,7 @@ export const profileDetailMachine=
                 
             },
 
+
             userPresent:{
                 invoke:{
                     id:'getFormDetails',
@@ -41,28 +42,32 @@ export const profileDetailMachine=
                     onDone:{
                         target:".form",
                     },
-                    onError:{
-                        target:".failureScreen",
-                    }
+                    onError:".failureScreen"
 
                 },
 
                 states: {
                     form: {
                         on: {
-                            ONSUBMIT: "successScreen"
+                            ONSUBMIT:{
+                                target: "successScreen",
+                            }
                         }
+                        
                     },
 
                     failureScreen:{
                         on: {
-                            RETRY: "#ProfileDetailForm.userPresent"
+                            RETRY: "#ProfileDetailForm.userPresent",
                         }
                     },
 
                     successScreen:{
                         on: {
-                            LogOut: "#ProfileDetailForm.userNotPresent"
+                            LOGOUT: {
+                                target:"#ProfileDetailForm.userNotPresent",
+                                actions:()=> localStorage.removeItem('isLogin')
+                            },
                         }
                     }
                 },
@@ -80,16 +85,15 @@ export const profileDetailMachine=
                         on:{
                             VERIFYOTP:[{
                                 target:"#ProfileDetailForm.userPresent",
-                                cond: ()=>{ return true}
+                                cond: ()=>{ return true},
+                                actions:()=>{
+                                    localStorage.setItem('isLogin','true')
+                                }
                             }],
-                            GETOTPAGAIN:{
-                                target:'loginPage'
-                            }
                         }
                     }
                 },
-
-                initial: "loginPage"
+                initial: "loginPage",
             }
         },
 
